@@ -1,0 +1,39 @@
+class countrysList extends React.Component {
+
+    constructor(){
+        super();
+        this.state = {
+            search: ''
+        };
+    }
+
+}
+
+updateSearch(event){
+    this.setState({search: event.target.value.substr(0,20)})
+};
+
+render() { 
+    let filteredCountrys=this.props.countrys.filter(
+        (country)=>{return country.["country-eng"].indexOf(this.state.search) !== -1} //if cannot find, do not return
+    );
+    
+    return (
+        <div>
+        <ul>
+        {filteredCountrys.map((country)=>{
+
+            return <Chart country={country} key={country.id}/>
+
+        })}
+        </ul>
+        <input type="text"
+
+        value={this.state.serach}
+        onChange={this.updateSearch.bind(this)}
+        
+        >
+        </div>
+
+    )
+}
