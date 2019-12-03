@@ -79,7 +79,7 @@ class USHome extends Component{
 
                 return (
                   
-                  <div className="home" style={{position:"static",height:"100%",overflow:"scroll"}}>
+                  <div className="home" style={{position:"static",height:"100%",overflow:"hidden"}}>
 
                             <div className="container" style={{height:"100%"}}>
 
