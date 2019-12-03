@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Table from 'react-bootstrap/Table';
 import {BrowserRouter,Router,Route,Link} from "react-router-dom";
-import pic from './people.jpg';
+import pic from 'static/people.jpg';
 import history from './history'
 
 class USHome extends Component{  
