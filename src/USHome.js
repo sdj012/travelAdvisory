@@ -18,10 +18,10 @@ class USHome extends Component{
             }
         
             getCountries(){
-
-              //original source: https://cadatacatalog.state.gov/storage/f/2016-03-03T20%3A05%3A31.000Z/csi.json
         
-                axios.get('https://jsonware.com/json/c66eecfef5f62eba4995e39f0e3eabbf.json')
+              //original link: https://cadatacatalog.state.gov/storage/f/2016-03-03T20:05:31.000Z/csi.json
+              axios.get('https://jsonware.com/json/c66eecfef5f62eba4995e39f0e3eabbf.json')
+  
             
                   .then(response => {
                     this.setState({
@@ -110,7 +110,7 @@ class USHome extends Component{
                                </BrowserRouter>
                                </tbody>
                               </Table>
-                              </div>
+                            </div>
                 </div>
                 )  
           

@@ -1,12 +1,15 @@
 import React,{Component} from 'react'
 import axios from 'axios'
-import './index.css';
+// import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
-import warning from './static/warning.png'
-import medical from './static/caduceus.png'
-import hammer from './static/hammer.png'
-import airport from './static/airport.png'
+import warning from './static/warning.png';
+import medical from './static/caduceus.png';
+import hammer from './static/hammer.png';
+import airport from './static/airport.png';
+import Container from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 class InfoPage extends Component{ 
@@ -197,33 +200,38 @@ class InfoPage extends Component{
         <div id="InfoPage">
 
         <div id="header">
-        <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
-        <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div>
+            <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
+            <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div>
        </div>
 
-        <Nav defaultActiveKey="#" className="flex-column" id="menu">
-            <Nav.Link href="#safetyandSecurity"><img id="icons" src={warning} width="30%" height="auto"></img></Nav.Link><p id="label">Security</p>
-            <Nav.Link href="#medical"><img id="icons" src={medical} width="30%" height="auto"></img></Nav.Link><p id="label">Medical Infrastructure</p>
-            <Nav.Link href="#lawsCircumstance"><img id="icons" src={hammer} width="30%" height="auto"></img></Nav.Link><p id="label">Laws and Circumstances</p>
-            <Nav.Link href="#entryExit"><img id="icons" src={airport} width="30%" height="auto"></img></Nav.Link><p id="label">Entering and Exiting</p>
-        </Nav>
+        <Container id="container">
+            <Row>
+                <Col id="content">
+                    <div class="contName" id="safetyandSecurity"><b>Safety and Security</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={returnSafetyHazardsInfo()}/>
 
- 
-        <div class="container-fluid contName" id="safetyandSecurity"><b>Safety and Security</b></div>
-        <div class="container-fluid contText" dangerouslySetInnerHTML={returnSafetyHazardsInfo()}/>
+                    <div align="right" class=" contName" id="medical"><b>Medical Infrastructure</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={returnMedicalInfraInfo()}/>
 
-        <div align="right" class="container-fluid contName" id="medical"><b>Medical Infrastructure</b></div>
-        <div class="container-fluid contText" dangerouslySetInnerHTML={returnMedicalInfraInfo()}/>
+                    <div class="contName" id="lawsCircumstance" ><b>Local Laws and Special Circumstances</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={returnLocalLawsInfo()}/>
 
-        <div class="container-fluid contName" id="lawsCircumstance" ><b>Local Laws and Special Circumstances</b></div>
-        <div class="container-fluid contText" dangerouslySetInnerHTML={returnLocalLawsInfo()}/>
+                    <div class="contName" id="entryExit"><b>Entry and Exit Requirements</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={returnEntryandExitInfo()}/>        
+                </Col>
 
-        <div class="container-fluid contName" id="entryExit"><b>Entry and Exit Requirements</b></div>
-        <div class="container-fluid contText" dangerouslySetInnerHTML={returnEntryandExitInfo()}/>        
-        
-        <div>
-        </div>
-            <div id="news"dangerouslySetInnerHTML={returnNews()}></div>
+                <Col xs lg="2" id="fixedColoumn">
+                    <Nav defaultActiveKey="#" className="flex-column" id="menu">
+                        <Nav.Link href="#safetyandSecurity"><img id="icons" src={warning} width="30%" height="auto"></img></Nav.Link>
+                        <p id="label">Security</p>
+                        <Nav.Link href="#medical"><img id="icons" src={medical} width="30%" height="auto"></img></Nav.Link><p id="label">Medical Infrastructure</p>
+                        <Nav.Link href="#lawsCircumstance"><img id="icons" src={hammer} width="30%" height="auto"></img></Nav.Link><p id="label">Laws and Circumstances</p>
+                        <Nav.Link href="#entryExit"><img id="icons" src={airport} width="30%" height="auto"></img></Nav.Link><p id="label">Entering and Exiting</p>
+                    </Nav>
+                    <div id="news"dangerouslySetInnerHTML={returnNews()}></div>
+                </Col>
+            </Row>
+        </Container>
         </div>
         
 
