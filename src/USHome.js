@@ -79,12 +79,12 @@ class USHome extends Component{
 
                 return (
                   
-                  <div className="home" style={{position:"static",height:"100%",overflow:"hidden"}}>
+                  <div className="home" style={{position:"static",height:"100%"}}>
 
                             <div className="container" style={{height:"100%"}}>
 
                               <div className="panel-title" align="center" style={{top:"25%",left:"20%",fontSize: 50, color: "black", opacity: 0.8, position:"absolute"}}>Where are you travelling?</div>
-                              <img style={{height:"600px", width:"auto",top:"35%",left:"50%",position:"absolute"}} src={pic}></img>
+                              <img style={{height:"500px", width:"auto",top:"35%",left:"50%",position:"absolute"}} src={pic}></img>
 
                               <Table align="center" bordered hover style={{ backgroundColor:'white', left:"20%", top: "35%",position:"absolute", width:"60pc"}}>
                                 <thead>
