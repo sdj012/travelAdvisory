@@ -223,10 +223,10 @@ class InfoPage extends Component{
                 <Col xs lg="2" id="fixedColoumn">
                     <Nav defaultActiveKey="#" className="flex-column" id="menu">
                         <Nav.Link href="#safetyandSecurity"><img id="icons" src={warning} width="30%" height="auto"></img></Nav.Link>
-                        <p id="label">Security</p>
-                        <Nav.Link href="#medical"><img id="icons" src={medical} width="30%" height="auto"></img></Nav.Link><p id="label">Medical Infrastructure</p>
-                        <Nav.Link href="#lawsCircumstance"><img id="icons" src={hammer} width="30%" height="auto"></img></Nav.Link><p id="label">Laws and Circumstances</p>
-                        <Nav.Link href="#entryExit"><img id="icons" src={airport} width="30%" height="auto"></img></Nav.Link><p id="label">Entering and Exiting</p>
+                        {/* <p id="label">Security</p> */}
+                        <Nav.Link href="#medical"><img id="icons" src={medical} width="30%" height="auto"></img></Nav.Link>
+                        <Nav.Link href="#lawsCircumstance"><img id="icons" src={hammer} width="30%" height="auto"></img></Nav.Link>
+                        <Nav.Link href="#entryExit"><img id="icons" src={airport} width="30%" height="auto"></img></Nav.Link>
                     </Nav>
                     <div id="news"dangerouslySetInnerHTML={returnNews()}></div>
                 </Col>
