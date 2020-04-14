@@ -3,9 +3,8 @@ import axios from 'axios';
 import './App.css';
 import './index.css'
 import Table from 'react-bootstrap/Table';
-import {BrowserRouter,Router,Route,Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import pic from './static/people.jpg';
-import history from './history'
 
 class USHome extends Component{  
 
@@ -87,7 +86,6 @@ class USHome extends Component{
                               <div className="panel-title" align="center">Where are you travelling?</div>
                               <img className="homeImg" src={pic}></img>
 
-                              {/* <table align="center" bordered hover> */}
                               <Table align="center" bordered hover>
                                 <thead>
                                   <tr align="left">
@@ -104,12 +102,7 @@ class USHome extends Component{
                                 </thead>
                                <tbody>
                                {returnList()}
- 
-                                {/* <BrowserRouter>
-                               <Router history={history}> 
-                               <Route exact path="/InfoPage/:id" component={showInfo} />
-                               </Router>
-                               </BrowserRouter> */}
+
                                </tbody>
                               </Table>
                             </div>
