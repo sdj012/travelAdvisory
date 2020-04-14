@@ -4,6 +4,14 @@
 }
 
 /*US Home*/
+.home_0{
+  display: grid;
+
+  justify-content: center;
+  align-content: center;
+
+}
+
 
 .panel-title{
   position:absolute;
@@ -29,11 +37,6 @@ Table{
   top: 35%;
   width:60pc
 }
-.container{
-  opacity: 0.9;
-}
-
-
 
 
 
@@ -59,18 +62,28 @@ Table{
 #InfoPage{
 
   display:grid;
+
   grid-template-rows:3% auto;
   grid-template-columns: 70% 30%;
   grid-template-areas: 
     "header header"
     "content sideBar"
   ;
+
+  -webkit-grid-template-rows:3% auto;
+  -webkit-grid-template-columns: 70% 30%;
+  -webkit-grid-template-areas: 
+    "header header"
+    "content sideBar"
+  ;
+
   justify-content: stretch;
 
 }
 
 #content{
   grid-area: content;
+  -webkit-grid-area: content;
   padding-left:5%;
 }
 
@@ -94,6 +107,8 @@ Table{
 
 #menu{
   position:fixed;
+  -webkit-position:fixed;
+  -moz-position:fixed;
 
 }
 
@@ -103,7 +118,7 @@ Table{
 }
 
 #header-2{
-  position:fixed;
+  -webkit-position:fixed;
 
   top:0;
   width:100%;
@@ -115,7 +130,6 @@ Table{
 #countryName{
   grid-area:header;
 
-
   margin:2px 2px 2px 40px;
   letter-spacing: 1px;
   font-size:3pc;
@@ -123,13 +137,13 @@ Table{
 
 }
 
-#flag{
+/* #flag{
   position: absolute;
   z-index:2;
   width:40%;
   height:auto;
   margin:2px 2px 2px 20px;
-}
+} */
 
 
 body {

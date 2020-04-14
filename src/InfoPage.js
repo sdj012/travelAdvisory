@@ -194,7 +194,7 @@ class InfoPage extends Component{
             <div id="header">
                 <div id="header-2">
                     <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
-                    <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div>
+                    {/* <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div> */}
                 </div>
             </div>
 
