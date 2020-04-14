@@ -14,14 +14,14 @@ class App extends Component {
   return (
 
 <BrowserRouter>
-<Switch>
-    <Route exact path='/' render={() => ( 
-        <USHome/>
-    )}/>
-    
-     <Route  path='/:id' component={InfoPage} />
+  <Switch>
+      <Route exact path='/' render={() => ( 
+          <USHome/>
+      )}/>
+      
+      <Route  path='/:id' component={InfoPage} />
 
-</Switch>
+  </Switch>
 </BrowserRouter>
 
 

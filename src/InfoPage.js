@@ -1,15 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios'
-// import './index.css';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from 'react-bootstrap/Nav';
-import warning from './static/warning.png';
-import medical from './static/caduceus.png';
-import hammer from './static/hammer.png';
-import airport from './static/airport.png';
-import Container from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 
 class InfoPage extends Component{ 
@@ -37,7 +29,7 @@ class InfoPage extends Component{
             });
           })
     
-          .catch(err => window.alert(err) );
+          .catch(err => (err) );
       }
 
       getNews(){
@@ -51,7 +43,7 @@ class InfoPage extends Component{
             news:response.data.articles,
             })
         })
-        .catch(err => window.alert(err))
+        .catch(err => (err))
 
     }
 
@@ -199,41 +191,51 @@ class InfoPage extends Component{
 
         <div id="InfoPage">
 
-        <div id="header">
-            <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
-            <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div>
-       </div>
+            <div id="header">
+                <div id="header-2">
+                    <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
+                    <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div>
+                </div>
+            </div>
 
-        <Container id="container">
-            <Row>
-                <Col id="content">
-                    <div class="contName" id="safetyandSecurity"><b>Safety and Security</b></div>
-                    <div class="contText" dangerouslySetInnerHTML={returnSafetyHazardsInfo()}/>
+            <div id="content">
 
-                    <div align="right" class=" contName" id="medical"><b>Medical Infrastructure</b></div>
-                    <div class="contText" dangerouslySetInnerHTML={returnMedicalInfraInfo()}/>
+            <div id="safetyandSecurity">
 
-                    <div class="contName" id="lawsCircumstance" ><b>Local Laws and Special Circumstances</b></div>
-                    <div class="contText" dangerouslySetInnerHTML={returnLocalLawsInfo()}/>
+                <div class="contName"><b>Safety and Security</b></div>
+                <div class="contText" dangerouslySetInnerHTML={returnSafetyHazardsInfo()}/>
+            
+            </div>
 
-                    <div class="contName" id="entryExit"><b>Entry and Exit Requirements</b></div>
-                    <div class="contText" dangerouslySetInnerHTML={returnEntryandExitInfo()}/>        
-                </Col>
+            <div id="medical">
+                <div align="right" class="contName"><b>Medical Infrastructure</b></div>
+                <div class="contText" dangerouslySetInnerHTML={returnMedicalInfraInfo()}/>
+            </div>
 
-                <Col xs lg="2" id="fixedColoumn">
-                    <Nav defaultActiveKey="#" className="flex-column" id="menu">
-                        <Nav.Link href="#safetyandSecurity"><img id="icons" src={warning} width="30%" height="auto"></img></Nav.Link>
-                        {/* <p id="label">Security</p> */}
-                        <Nav.Link href="#medical"><img id="icons" src={medical} width="30%" height="auto"></img></Nav.Link>
-                        <Nav.Link href="#lawsCircumstance"><img id="icons" src={hammer} width="30%" height="auto"></img></Nav.Link>
-                        <Nav.Link href="#entryExit"><img id="icons" src={airport} width="30%" height="auto"></img></Nav.Link>
-                    </Nav>
-                    <div id="news"dangerouslySetInnerHTML={returnNews()}></div>
-                </Col>
-            </Row>
-        </Container>
-        </div>
-        
+            <div id="lawsCircumstance">
+                <div class="contName"><b>Local Laws and Special Circumstances</b></div>
+                <div class="contText" dangerouslySetInnerHTML={returnLocalLawsInfo()}/>
+            </div>
+
+            <div id="entryExit">
+                <div class="contName"><b>Entry and Exit Requirements</b></div>
+                <div class="contText" dangerouslySetInnerHTML={returnEntryandExitInfo()}/>        
+            </div>
+
+            </div> 
+
+            <div id="sideBar">
+                <div id="menu">
+
+                    <ul> <a href="#safetyandSecurity">Safety and Security</a> </ul>
+                    <ul> <a href="#medical">Medical Infrastructure</a> </ul>
+                    <ul> <a href="#lawsCircumstance">Laws and Circumstances</a> </ul>
+                    <ul> <a href="#entryExit">Entry and Exit</a> </ul>     
+
+                </div> 
+            </div>    
+                 
+        </div>     
 
     )
 

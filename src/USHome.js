@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import './index.css'
 import Table from 'react-bootstrap/Table';
 import {BrowserRouter,Router,Route,Link} from "react-router-dom";
 import pic from './static/people.jpg';
@@ -83,16 +84,16 @@ class USHome extends Component{
 
                             <div className="container" style={{height:"100%"}}>
 
-                              <div className="panel-title" align="center" style={{top:"25%",left:"20%",fontSize: 50, color: "black", opacity: 0.8, position:"absolute"}}>Where are you travelling?</div>
-                              <img style={{height:"500px", width:"auto",top:"35%",left:"50%",position:"absolute"}} src={pic}></img>
+                              <div className="panel-title" align="center">Where are you travelling?</div>
+                              <img className="homeImg" src={pic}></img>
 
-                              <Table align="center" bordered hover style={{ backgroundColor:'white', left:"20%", top: "35%",position:"absolute", width:"60pc"}}>
+                              <Table align="center" bordered hover>
                                 <thead>
                                   <tr align="left">
                                   <th scope="col">
                                     <div className="col-md-12" id="col">
 
-                                    <input type="text" className="container" placeholder="Search for a Country" style={{opacity: 0.9}} value={this.state.search}
+                                    <input type="text" className="container" placeholder="Search for a Country" value={this.state.search}
                                     onChange={this.updateSearch.bind(this)}></input>
 
                                   </div>
