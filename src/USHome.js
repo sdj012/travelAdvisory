@@ -87,6 +87,7 @@ class USHome extends Component{
                               <div className="panel-title" align="center">Where are you travelling?</div>
                               <img className="homeImg" src={pic}></img>
 
+                              {/* <table align="center" bordered hover> */}
                               <Table align="center" bordered hover>
                                 <thead>
                                   <tr align="left">
@@ -104,11 +105,11 @@ class USHome extends Component{
                                <tbody>
                                {returnList()}
  
-                                <BrowserRouter>
+                                {/* <BrowserRouter>
                                <Router history={history}> 
                                <Route exact path="/InfoPage/:id" component={showInfo} />
                                </Router>
-                               </BrowserRouter>
+                               </BrowserRouter> */}
                                </tbody>
                               </Table>
                             </div>
