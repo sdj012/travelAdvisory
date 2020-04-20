@@ -15,7 +15,10 @@ class USHome extends Component{
                     Countries:[],
                     search:""
                 };
-            }
+
+                this.updateSearch=this.updateSearch.bind(this);
+
+              }
         
             getCountries(){
         
@@ -81,30 +84,32 @@ class USHome extends Component{
                   
                   <div className="home" style={{position:"static",height:"100%"}}>
 
+                    <div className="panel-title" align="center">Where are you travelling?</div>
+                            
                             <div className="container" style={{height:"100%"}}>
 
-                              <div className="panel-title" align="center">Where are you travelling?</div>
                               <img className="homeImg" src={pic}></img>
 
-                              <Table align="center" bordered hover>
-                                <thead>
-                                  <tr align="left">
-                                  <th scope="col">
-                                    <div className="col-md-12" id="col">
+                                <Table align="center" bordered hover>
+                                  <thead>
+                                    <tr align="left">
+                                    <th scope="col">
+                                      <div className="col-md-12" id="col">
 
-                                    <input type="text" className="container" placeholder="Search for a Country" value={this.state.search}
-                                    onChange={this.updateSearch.bind(this)}></input>
+                                        <input type="text" className="container" placeholder="Search for a Country" value={this.state.search}
+                                        onChange={this.updateSearch.bind(this)}></input>
 
-                                  </div>
-                                  </th>
+                                      </div>
+                                    </th>
 
-                                  </tr>
-                                </thead>
-                               <tbody>
-                               {returnList()}
+                                    </tr>
+                                  </thead>
+                                <tbody>
+                                {returnList()}
 
-                               </tbody>
-                              </Table>
+                                </tbody>
+                                </Table>
+
                             </div>
                 </div>
                 )  

@@ -23,31 +23,31 @@
 }
 
 tbody{
-  position:absolute;
+  position:relative;
   top:100%;
   left:5%;
 }
 
-table{
+Table{
   position: static;
   background-color:white;
-  margin-top: 25%;
+  margin-top: 15%;
   left:20%;
   margin-right:20%;
 }
 
 .panel-title{
-  position:absolute;
-  top:25%;
-  left:10%;
+  position:static;
+  padding-top:10%;
+  padding-bottom:0%;
   font-size: 2pc;
   color: black;
   opacity: 0.8;
 }
 
 .homeImg{
-  position:absolute;
-
+  position: static;
+  display: none;
   width:auto;
   height:350px;
   top:45%;
