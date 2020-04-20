@@ -7,19 +7,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class InfoPage extends Component{ 
     
     constructor(props){
+
         super(props);
    
 
         this.state = {
-            Countries:[],
-            countryName:this.props.match.params,
-            news:[],
-            flagCode:"",
-            loading:true
+
+        Countries:[],
+        countryName:this.props.match.params,
+        news:[],
+        flagCode:"",
+        loading:true
+
         };
+        
+        //APIs
+        this.getCountries=this.getCountries.bind(this);
+        
+        /* to be fixed
+        this.getNews=this.getNews.bind(this);
+        this.returnNews=this.returnNews.bind(this);  
+        this.returnFlag=this.returnFlag.bind(this);
+        */ 
+       
+        this.returnCountryName=this.returnCountryName.bind(this);
+        
+        //Content
+        this.returnSafetyHazardsInfo=this.returnSafetyHazardsInfo.bind(this);
+        this.returnMedicalInfraInfo=this.returnMedicalInfraInfo.bind(this);
+        this.returnLocalLawsInfo=this.returnLocalLawsInfo.bind(this);
+        this.returnEntryandExitInfo=this.returnEntryandExitInfo.bind(this);
+        
+        this.componentDidMount=this.componentDidMount.bind(this);
+        
     }
 
-      getCountries(){
+      getCountries=()=>{
 
         axios.get('https://jsonware.com/json/c66eecfef5f62eba4995e39f0e3eabbf.json')
     
@@ -30,10 +53,11 @@ class InfoPage extends Component{
           })
     
           .catch(err => (err) );
-      }
+        }
 
-      getNews(){
+      /*getNews=()=>{
 
+        API temporarily unavailable
         var url = 'https://newsapi.org/v2/everything?language=en&' + 'qInTitle='+this.state.countryName.id+'&' +'from=2019-12-01&' +'sortBy=popularity&' +'apiKey=3785f9ef831042c0bc54c1a2b18a6489';
 
         axios.get(url)
@@ -45,59 +69,58 @@ class InfoPage extends Component{
         })
         .catch(err => (err))
 
-    }
+        }*/
+ 
+        returnCountryName=()=>{
 
-      componentDidMount() {
-        this.getCountries();  
-        this.getNews();
-
-        setTimeout(()=>{
-            this.setState({loading:false})},4000);
-        }
-
-    render(){
-
-        const {countryName}=this.state;   
-        const {Countries}=this.state; 
-        const {news}=this.state;
-        let {flagCode}=this.state;
-
-        function returnCountryName(){
-
+            const {Countries}=this.state; 
+            const {countryName}=this.state;  
+            
             var Arr=[];
             
             for( var i in Countries){
-
+                
                 if( (Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
-                              
-                Arr+="<div><b> Visting " + Countries[i].geopoliticalarea + "</b></div>";
-
+                    
+                    Arr+="<div><b> Visting " + Countries[i].geopoliticalarea + "</b></div>";
+                    
                 }
             }
             return {__html: Arr };
         }  
+        
+        /*returnFlag=()=>{
 
-        function returnFlag(){
+            const {Countries}=this.state; 
+            const {countryName}=this.state;
+            let {flagCode}=this.state;
 
                 for( var i in Countries){
                     if((Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
-                    flagCode=Countries[i].iso_code;
+                        flagCode=Countries[i].iso_code;
                     }
                 }
 
             if(flagCode){
         
-            let tag="<img src=https://www.countryflags.io/"+flagCode+"/flat/64.png></img>";
-            return {__html:tag};
+                let tag="<img src=https://www.countryflags.io/"+flagCode+"/flat/64.png></img>";
+                
+                return {__html:tag};
 
             }
+
             else{
+
                 return{__html:"<p></p>"}
+                
             }
-        }  
+        }*/  
 
 
-          function returnSafetyHazardsInfo() {
+        returnSafetyHazardsInfo=()=>{
+
+            const {Countries}=this.state; 
+            const {countryName}=this.state;  
 
             var Arr=[];
             
@@ -113,23 +136,29 @@ class InfoPage extends Component{
 
           }
 
-          function returnMedicalInfraInfo() {
+        returnMedicalInfraInfo=()=>{
 
-            var Arr=[];
-            
-            for( var i in Countries){
+        const {Countries}=this.state; 
+        const {countryName}=this.state;  
 
-                if( (Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
+        var Arr=[];
+        
+        for( var i in Countries){
 
-                Arr+=Countries[i].health;
+            if( (Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
 
-                }
+            Arr+=Countries[i].health;
+
             }
-            return {__html: Arr };
-            
-          }
+        }
+        return {__html: Arr };
+        
+        }
 
-          function returnLocalLawsInfo() {
+        returnLocalLawsInfo=()=>{
+
+            const {Countries}=this.state; 
+            const {countryName}=this.state;  
 
             var Arr=[];
             
@@ -143,101 +172,116 @@ class InfoPage extends Component{
             }
             return {__html: Arr };
             
-          }
+        }
 
-          function returnEntryandExitInfo() {
+        returnEntryandExitInfo=()=>{
 
-            var Arr=[];
-            
-            for( var i in Countries){
+        const {Countries}=this.state; 
+        const {countryName}=this.state;  
 
-                if( (Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
-                  
-                Arr+=Countries[i].entry_exit_requirements;
+        var Arr=[];
+        
+        for( var i in Countries){
 
-                }
+            if( (Countries[i].geopoliticalarea).toUpperCase().localeCompare(countryName.id.toUpperCase()) ===0 ){
+                
+            Arr+=Countries[i].entry_exit_requirements;
+
             }
-            return {__html: Arr };
-            
-          }
+        }
+        return {__html: Arr };
+        
+        }
           
-          function returnNews(){
+        returnNews=()=>{
 
-            let arr=[];
-            arr+="<b>Latest News </b>(powered by News API)"
-              news.map(function(item){
-                 arr+="<p id='link'><a href='"+item.url+"'>"+"<b>"+item.source.name+"</b>: "+item.title+"</a></p>"
+        const {news}=this.state;
 
-              });
+        let arr=[];
+        arr+="<b>Latest News </b>(powered by News API)"
+            news.map(function(item){
+                arr+="<p id='link'><a href='"+item.url+"'>"+"<b>"+item.source.name+"</b>: "+item.title+"</a></p>"
 
-            return {__html: arr };
+            });
 
-          }
+        return {__html: arr };
 
+        }
+
+        componentDidMount=()=>{
+
+        this.getCountries();  
+        /*this.getNews(); API temporarily unavailable*/
+
+        setTimeout(()=>{this.setState({loading:false})},4000);
+        }
+
+    render(){
 
     if(this.state.loading){
+
         return (
-        <div>
-        <div id="loadingPage">
-            <iframe src="https://giphy.com/embed/ei9ZRrqNLI5NZGMwhF" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        </div>
-        </div>
+            <div>
+                <div id="loadingPage">
+                    <iframe src="https://giphy.com/embed/ei9ZRrqNLI5NZGMwhF" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </div>
+            </div>
         )
     }
 
-    else{
+    else {
 
-    return(
+        return(
 
-        <div id="InfoPage">
+            <div id="InfoPage">
 
-            <div id="header">
-                <div id="header-2">
-                    <div id="countryName"dangerouslySetInnerHTML={returnCountryName()}></div>
-                    {/* <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div> */}
+                <div id="header">
+                    <div id="header-2">
+                        <div id="countryName"dangerouslySetInnerHTML={this.returnCountryName()}></div>
+                        {/*** API temporarily unavailable *** <div id="flag" dangerouslySetInnerHTML={returnFlag()}></div> */}
+                    </div>
                 </div>
-            </div>
 
-            <div id="content">
+                <div id="content">
 
-            <div id="safetyandSecurity">
+                <div id="safetyandSecurity">
 
-                <div class="contName"><b>Safety and Security</b></div>
-                <div class="contText" dangerouslySetInnerHTML={returnSafetyHazardsInfo()}/>
-            
-            </div>
+                    <div class="contName"><b>Safety and Security</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={this.returnSafetyHazardsInfo()}/>
+                
+                </div>
 
-            <div id="medical">
-                <div align="right" class="contName"><b>Medical Infrastructure</b></div>
-                <div class="contText" dangerouslySetInnerHTML={returnMedicalInfraInfo()}/>
-            </div>
+                <div id="medical">
+                    <div align="right" class="contName"><b>Medical Infrastructure</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={this.returnMedicalInfraInfo()}/>
+                </div>
 
-            <div id="lawsCircumstance">
-                <div class="contName"><b>Local Laws and Special Circumstances</b></div>
-                <div class="contText" dangerouslySetInnerHTML={returnLocalLawsInfo()}/>
-            </div>
+                <div id="lawsCircumstance">
+                    <div class="contName"><b>Local Laws and Special Circumstances</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={this.returnLocalLawsInfo()}/>
+                </div>
 
-            <div id="entryExit">
-                <div class="contName"><b>Entry and Exit Requirements</b></div>
-                <div class="contText" dangerouslySetInnerHTML={returnEntryandExitInfo()}/>        
-            </div>
-
-            </div> 
-
-            <div id="sideBar">
-                <div id="menu">
-
-                    <ul> <a href="#safetyandSecurity">Safety and Security</a> </ul>
-                    <ul> <a href="#medical">Medical Infrastructure</a> </ul>
-                    <ul> <a href="#lawsCircumstance">Laws and Circumstances</a> </ul>
-                    <ul> <a href="#entryExit">Entry and Exit</a> </ul>     
+                <div id="entryExit">
+                    <div class="contName"><b>Entry and Exit Requirements</b></div>
+                    <div class="contText" dangerouslySetInnerHTML={this.returnEntryandExitInfo()}/>        
+                </div>
 
                 </div> 
-            </div>    
-                 
-        </div>     
 
-    )
+                <div id="sideBar">
+                    <div id="menu">
+
+                        <ul> <a href="#safetyandSecurity">Safety and Security</a> </ul>
+                        <ul> <a href="#medical">Medical Infrastructure</a> </ul>
+                        <ul> <a href="#lawsCircumstance">Laws and Circumstances</a> </ul>
+                        <ul> <a href="#entryExit">Entry and Exit</a> </ul>     
+
+                    </div> 
+                </div>    
+                        
+            </div>     
+
+        )
 
     }
     

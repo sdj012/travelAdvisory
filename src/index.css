@@ -11,21 +11,8 @@
   align-content: center;
 }
 
-.container_0{
-  position: absolute;
-  margin-right:20%;
-  margin-left:20%;
-  width:100%;
-}
-
 .searchBar{
   width:100%;
-}
-
-tbody{
-  position:relative;
-  top:100%;
-  left:5%;
 }
 
 Table{
@@ -35,6 +22,12 @@ Table{
   left:20%;
   margin-right:20%;
 }
+  tbody{
+    position:relative;
+    top:100%;
+    left:5%;
+  }
+
 
 .panel-title{
   position:static;
@@ -44,18 +37,6 @@ Table{
   color: black;
   opacity: 0.8;
 }
-
-.homeImg{
-  position: static;
-  display: none;
-  width:auto;
-  height:350px;
-  top:45%;
-  left:50%;
-}
-
-
-
 
 
 /*InfoPage*/
@@ -127,7 +108,6 @@ Table{
   position:fixed;
   -webkit-position:fixed;
   -moz-position:fixed;
-
 }
 
 #label{
@@ -135,15 +115,7 @@ Table{
   font-size: medium;
 }
 
-#header-2{
-  -webkit-position:fixed;
 
-  top:0;
-  width:100%;
-  z-index:1;
-  background-color: white;
-
-}
 
 #countryName{
   grid-area:header;
