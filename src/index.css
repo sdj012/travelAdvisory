@@ -28,15 +28,21 @@ Table{
     left:5%;
   }
 
+@keyframes move-on-load{
+  from {padding-top:2%}
+  to {padding-top:10%}
+}
 
 .panel-title{
   position:static;
-  padding-top:10%;
+  animation:move-on-load 3s 1;
+  animation-fill-mode: forwards;
   padding-bottom:0%;
   font-size: 2pc;
   color: black;
   opacity: 0.8;
 }
+
 
 
 /*InfoPage*/
@@ -62,14 +68,14 @@ Table{
 
   display:grid;
 
-  grid-template-rows:3% auto;
+  grid-template-rows:2% auto;
   grid-template-columns: 70% 30%;
   grid-template-areas: 
     "header header"
     "content sideBar"
   ;
 
-  -webkit-grid-template-rows:3% auto;
+  -webkit-grid-template-rows:2% auto;
   -webkit-grid-template-columns: 70% 30%;
   -webkit-grid-template-areas: 
     "header header"
@@ -78,6 +84,12 @@ Table{
 
   justify-content: stretch;
 
+}
+
+#header{
+  grid-area:header;
+  background-color: black;
+  align-self:start;
 }
 
 #content{
@@ -119,11 +131,12 @@ Table{
 
 #countryName{
   grid-area:header;
-
   margin:2px 2px 2px 40px;
   letter-spacing: 1px;
   font-size:3pc;
-  opacity: 0.7;
+  font-style:normal; 
+  color:white;
+  opacity: 0.9;
 
 }
 
