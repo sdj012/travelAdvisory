@@ -1,6 +1,6 @@
-<img src="https://user-images.githubusercontent.com/49047379/111561960-ba31ac00-876b-11eb-8a26-1baf5973f712.gif" width="350" height="auto">
+## Navigatable Travel Advisory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://user-images.githubusercontent.com/49047379/111561960-ba31ac00-876b-11eb-8a26-1baf5973f712.gif" width="350" height="auto">
 
 ## Available Scripts
 
