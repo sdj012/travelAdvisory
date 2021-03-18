@@ -1,7 +1,4 @@
-Click the thumbnail to view a full demo:
-[![Watch the video](https://img.youtube.com/vi/S1_anb03zmU/maxresdefault.jpg)](https://youtu.be/S1_anb03zmU) 
-
-![traveldirectoryDemo](https://user-images.githubusercontent.com/49047379/111561960-ba31ac00-876b-11eb-8a26-1baf5973f712.gif)
+<img src="https://user-images.githubusercontent.com/49047379/111561960-ba31ac00-876b-11eb-8a26-1baf5973f712.gif" width="350" height="auto">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
