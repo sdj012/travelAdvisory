@@ -8,7 +8,7 @@ Pulling from the .json file provided by https://cadatacatalog.state.gov/storage/
 
 ## Under Repair
 
-Flags from https://www.countryflags.io/ 
+- Flag display using https://www.countryflags.io/ 
 
-News updates from News API
+- News updates using News API
 
