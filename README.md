@@ -1,6 +1,6 @@
 ## Navigatable Travel Advisory
 
-#Demo:https://international-travelguide.herokuapp.com/
+# Demo:https://international-travelguide.herokuapp.com/
 
 <img src="https://user-images.githubusercontent.com/49047379/111561960-ba31ac00-876b-11eb-8a26-1baf5973f712.gif" width="350" height="auto">
 
